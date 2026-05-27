@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { MouseEventHandler } from 'svelte/elements';
 
 	const {
 		variant = 'default',
@@ -12,13 +11,13 @@
 		children,
 		className = ''
 	}: {
-		variant: 'default' | 'secondary' | 'outline' | 'link';
-		size: 'sm' | 'md' | 'lg' | 'icon';
-		disabled: boolean;
-		className: string;
-		type: 'button' | 'submit' | 'reset';
-		onclick: MouseEventHandler<HTMLButtonElement>;
-		ariaLabel: string | undefined;
+		variant?: 'default' | 'secondary' | 'outline' | 'link';
+		size?: 'sm' | 'md' | 'lg' | 'icon';
+		disabled?: boolean;
+		className?: string;
+		type?: 'button' | 'submit' | 'reset';
+		onclick: () => void;
+		ariaLabel?: string | undefined;
 		children: Snippet<[]>;
 	} = $props();
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { m } from '$lib/paraglide/messages';
 	import '../app.css';
 
@@ -16,14 +17,14 @@
 	];
 </script>
 
-<div class="border-primary text-primary w-full border-b-4 bg-neutral-950">
-	<div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-		<h1 class="text-3xl font-extrabold tracking-wider uppercase">IOAK.EU</h1>
-		<nav class="flex space-x-6">
-			{#each pages as { name, page }}
+<div class="border-primary text-primary bg-neutral-950 w-full border-b-4">
+	<div class="max-w-6xl px-4 py-4 mx-auto flex items-center justify-between">
+		<!-- <h1 class="text-3xl font-extrabold tracking-wider uppercase">IOAK.EU</h1> -->
+		<nav class="space-x-6 flex">
+			{#each pages as { name, page } (name)}
 				<a
-					href={page}
-					class="border-primary hover:bg-primary border-2 px-3 py-1 text-sm font-bold uppercase transition-colors hover:text-neutral-950"
+					href={resolve(page)}
+					class="border-primary hover:bg-primary px-3 py-1 text-sm font-bold hover:text-neutral-950 border-2 uppercase transition-colors"
 				>
 					{name}
 				</a>

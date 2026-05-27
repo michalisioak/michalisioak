@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import Avatar from '$lib/components/Avatar.svelte';
-	import Badge from '$lib/components/Badge.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import KeySkills from '$lib/components/KeySkills.svelte';
 	import { me } from '$lib/me';
@@ -11,7 +12,7 @@
 	const age = today.getFullYear() - birthDate.getFullYear();
 </script>
 
-<section class="flex flex-col gap-15 md:flex-row">
+<section class="gap-15 md:flex-row flex flex-col">
 	<!-- Left Section -->
 	<div class="container">
 		<h1 class="text-4xl font-semibold sm:text-justify">
@@ -31,15 +32,17 @@
 
 		<KeySkills />
 
-		<p class="in mt-6 text-justify leading-relaxed text-neutral-700">
+		<p class="in mt-6 leading-relaxed text-neutral-700 text-justify">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quibusdam esse cupiditate
 			laudantium sequi ducimus quos quam, cumque cum libero, sit adipisci nulla deserunt? Laudantium
 			magnam ipsum suscipit delectus voluptatibus?
 		</p>
 
-		<div class="mt-6 flex w-full gap-4">
-			<Button>Get in Touch</Button>
-			<Button variant="secondary" size="lg">View Projects</Button>
+		<div class="mt-6 gap-4 flex w-full">
+			<Button onclick={() => window.location.assign(`mailto:${me.email}`)}>Get in Touch</Button>
+			<Button onclick={() => goto(resolve('/projects'))} variant="secondary" size="lg"
+				>View Projects</Button
+			>
 		</div>
 	</div>
 

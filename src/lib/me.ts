@@ -59,5 +59,6 @@ export const me = {
 	location: m.thessaloniki(),
 	study: m.eece(),
 	education: [eece],
-	seminars: [debug, rust, it_sprint, first_aid]
+	seminars: [debug, rust, it_sprint, first_aid],
+	email: 'ioakimidismichalis@gmail.com'
 };
