@@ -1,11 +1,13 @@
 <script>
+	import AppBar from '$lib/components/AppBar.svelte';
 	import AboutMe from './AboutMe.svelte';
 	import Education from './Education.svelte';
 	import Seminars from './Seminars.svelte';
 	import Timeline from './Timeline.svelte';
 </script>
 
-<div class="mx-auto max-w-6xl px-6 py-12">
+<AppBar title="ABOUT ME" />
+<div class="max-w-6xl px-6 py-12 mx-auto">
 	<AboutMe />
 	<div class="pt-10"></div>
 	<Education />
